@@ -13,3 +13,17 @@ def test_calculate_total_price(item_smartph):
 def test_apply_discount(item_smartph):
     Item.pay_rate = 0.5
     assert item_smartph.apply_discount() == 5000
+
+def test_name(item_smartph):
+    assert item_smartph.name == 'Смартфон'
+    item_smartph.name = 'СуперСмартфон'
+    assert item_smartph.name == 'СуперСмарт'
+
+def test_string_to_number(item_smartph):
+    assert item_smartph.string_to_number('7') == 7
+    assert item_smartph.string_to_number('7.0') == 7
+    assert item_smartph.string_to_number('8.0') == 8
+
+def test_instantiate_from_csv():
+    Item.instantiate_from_csv('../src/items.csv')
+    assert len(Item.all) == 5
