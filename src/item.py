@@ -1,4 +1,6 @@
 import csv
+
+
 class Item:
     """
     Класс для представления товара в магазине.
@@ -29,7 +31,6 @@ class Item:
         if issubclass(other.__class__, self.__class__):
             return self.quantity + other.quantity
         raise Exception
-
 
     def calculate_total_price(self) -> float:
         """
@@ -69,4 +70,3 @@ class Item:
             return int(number)
         elif '.' in number:
             return int(float(number))
-
