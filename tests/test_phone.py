@@ -23,4 +23,3 @@ def test_number_of_sim_must_be_positive(item_phone):
         item_phone.number_of_sim = -1
     item_phone.number_of_sim = 1
     assert item_phone.number_of_sim == 1
-
