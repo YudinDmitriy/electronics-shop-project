@@ -44,3 +44,8 @@ def test_str():
     item1 = Item("Смартфон", 10000, 20)
     assert str(item1) == 'Смартфон'
 
+
+def test_file_not_found_error():
+    with pytest.raises(FileNotFoundError, match='Отсутствует файл item.csv'):
+        Item.instantiate_from_csv('../src/item.csv')
+
